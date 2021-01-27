@@ -3,11 +3,11 @@
   date_default_timezone_set('Asia/Taipei');
 
 //編寫常用的設定檔
-  $dbserver1 = "192.168.100.203";
-  $dbport1 = "5432";
+  $dbserver1 = "";
+  $dbport1 = "";
   $dbname1 = "manager";
   $dbuser1 = "manager";
-  $dbpasswd1 = "manager@2018!kh";
+  $dbpasswd1 = "";
 
 //連結資料庫
   try {

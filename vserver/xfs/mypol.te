@@ -1,0 +1,10 @@
+
+module mypol 1.0;
+
+require {
+	type httpd_sys_script_t;
+	class capability chown;
+}
+
+#============= httpd_sys_script_t ==============
+allow httpd_sys_script_t self:capability chown;

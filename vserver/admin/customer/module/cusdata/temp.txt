@@ -1,0 +1,49 @@
+<tr>
+					<td>虚擬主機</td>
+					<td>數量：<input type="text" size="5" name="vhost_num" id="number"></input></td>
+				</tr>
+				<tr>
+					<td>FTP 帳號</td>
+					<td>數量：<input type="text" size="5" name="ftp_num" id="number"></input> 總空間：<input type="text" size="15" name="ftp_size" id="number"></input>MB</td>
+				</tr>
+				<tr>
+					<td>Email 帳號</td>
+					<td>數量：<input type="text" size="5" name="email_num" id="number"></input> 每個信箱空間：<input type="text" size="15" name="email_size" id="number"></input>MB <input type="checkbox" name="webmail" value="webmail">webmail 服務</input></td>
+				</tr>
+				<tr>
+					<td>DNS 網域</td>
+					<td>主網域：<input type="text" size="5" name="dns_main" id="number"></input> 次網域：<input type="text" size="5" name="dns_sub" id="number"></input> 主機名稱：<input type="text" size="5" name="dns_hosts" id="number"></input></td>
+				</tr>
+				<tr>
+					<td>MySQL 帳號</td>
+					<td>數量：<input type="text" size="5" name="mysql_num" id="number"></input></td>
+				</tr>
+	$vhost_num = $_POST["vhost_num"];
+	$vhost_sql = 'INSERT INTO baseRule_vhosts(OwnerID,vhosts_num,order_date)
+	               VALUES()';
+	
+	
+	
+	$ftp_num = $_POST["ftp_num"];
+	
+	$ftp_size = $_POST["ftp_size"];
+	
+	
+	$email_num = $_POST["email_num"];
+	
+	$email_size = $_POST["email_size"];
+	
+	if(isset($_POST["webmail"])){
+		$webmail = $_POST["webmail"];
+		
+	}
+	
+	$dns_main = $_POST["dns_main"];
+	
+	$dns_sub = $_POST["dns_sub"];
+	
+	$dns_hosts = $_POST["dns_hosts"];
+	
+	
+	$mysql_num = $_POST["mysql_num"];
+	

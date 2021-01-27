@@ -1,0 +1,13 @@
+
+module myhttpd_xfs 1.0;
+
+require {
+	type file_t;
+	type httpd_sys_script_t;
+	class capability sys_admin;
+	class dir { read getattr open search };
+}
+
+#============= httpd_sys_script_t ==============
+allow httpd_sys_script_t file_t:dir { read getattr open search };
+allow httpd_sys_script_t self:capability sys_admin;

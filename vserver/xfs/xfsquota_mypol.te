@@ -1,0 +1,12 @@
+
+module xfsquota_mypol 1.0;
+
+require {
+	type httpd_sys_script_t;
+	class capability { fowner sys_admin };
+}
+
+#============= httpd_sys_script_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow httpd_sys_script_t self:capability { fowner sys_admin };

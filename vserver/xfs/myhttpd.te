@@ -1,0 +1,16 @@
+
+module myhttpd 1.0;
+
+require {
+	type file_t;
+	type httpd_sys_script_t;
+	class dir write;
+	class file getattr;
+}
+
+#============= httpd_sys_script_t ==============
+#!!!! The source type 'httpd_sys_script_t' can write to a 'dir' of the following types:
+# tmp_t, httpd_tmp_t, httpd_sys_ra_content_t, httpd_sys_rw_content_t, httpd_sys_content_t, httpdcontent
+
+allow httpd_sys_script_t file_t:dir write;
+allow httpd_sys_script_t file_t:file getattr;

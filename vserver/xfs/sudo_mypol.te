@@ -1,0 +1,20 @@
+
+module sudo_mypol 1.0;
+
+require {
+	type sudo_db_t;
+	type httpd_sys_script_t;
+	type system_dbusd_var_run_t;
+	class sock_file write;
+	class dir { search getattr };
+}
+
+#============= httpd_sys_script_t ==============
+allow httpd_sys_script_t sudo_db_t:dir search;
+
+#!!!! This avc is allowed in the current policy
+allow httpd_sys_script_t sudo_db_t:dir getattr;
+
+#!!!! This avc is allowed in the current policy
+allow httpd_sys_script_t system_dbusd_var_run_t:dir search;
+allow httpd_sys_script_t system_dbusd_var_run_t:sock_file write;

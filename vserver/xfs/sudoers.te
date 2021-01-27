@@ -1,0 +1,44 @@
+
+module sudoers 1.0;
+
+require {
+	type syslogd_t;
+	type httpd_t;
+	type httpd_sys_script_t;
+	type devlog_t;
+	class process setrlimit;
+	class capability { setuid dac_read_search sys_resource setgid audit_write dac_override };
+	class file { read getattr open };
+	class netlink_audit_socket { nlmsg_relay create };
+	class sock_file write;
+	class unix_dgram_socket sendto;
+	class dir search;
+}
+
+#============= httpd_sys_script_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow httpd_sys_script_t devlog_t:sock_file write;
+
+#!!!! This avc is allowed in the current policy
+allow httpd_sys_script_t httpd_t:dir search;
+
+#!!!! This avc is allowed in the current policy
+allow httpd_sys_script_t httpd_t:file { read getattr open };
+
+#!!!! This avc is allowed in the current policy
+allow httpd_sys_script_t self:capability { setuid dac_read_search sys_resource setgid audit_write dac_override };
+
+#!!!! This avc is allowed in the current policy
+allow httpd_sys_script_t self:netlink_audit_socket { nlmsg_relay create };
+
+#!!!! This avc is allowed in the current policy
+allow httpd_sys_script_t self:process setrlimit;
+
+#!!!! This avc is allowed in the current policy
+allow httpd_sys_script_t syslogd_t:unix_dgram_socket sendto;
+
+#============= httpd_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow httpd_t self:netlink_audit_socket create;
