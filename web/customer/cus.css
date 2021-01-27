@@ -1,0 +1,41 @@
+.sidebar {
+  padding-right: 0;
+}
+.vertical-menu {
+    width: 90%; /* Set a width if you like */
+    border:1px #ccc solid;
+    border-radius: 10px;
+}
+.vertical-menu h4.title {
+    border:0px #ccc solid;
+    border-radius: 10px 10px 0px 0px;
+    display: block;
+    margin: 0;
+    padding: 12px;
+    text-decoration: none;
+}
+.vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    /*background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    background-color: #428bca;
+    color: white;
+}
+.vertical-menu a.footer {
+  border:0px #ccc solid;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.rightpart {
+  padding-left: 0;
+}
